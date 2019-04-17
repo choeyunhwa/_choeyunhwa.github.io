@@ -9,8 +9,8 @@
 <section>
 <h2>JSP form</h2>
 <section>
-  <h2>아이디:<%=reuest.getParameter("userName")%><br/></h2>
-  <h2>패스워드:<%=reuest.getParameter("userPass")%><br/></h2>
+  <h2>아이디:<%=request.getParameter("userName")%><br/></h2>
+  <h2>패스워드:<%=request.getParameter("userPass")%><br/></h2>
 </section>
 </section>
 </body></html>
