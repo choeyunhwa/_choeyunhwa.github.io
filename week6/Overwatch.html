@@ -1,48 +1,108 @@
-<!doctype html> <!-- overwatch.html -->
+<!DOCTYPE html> <!-- Overwatch.html -->
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Select Overwatch Hero</title>
+  <script language="javascript"> 
+	function showC(selection) {
+    a = document.forms.selection;
+if(selection == 1) {
+     a.C1.style.display = "";
+     a.C2.style.display = "none";
+     a.C3.style.display = "none";
+     a.C4.style.display = "none";
+     a.C5.style.display = "none";
+     a.C6.style.display = "none";
+    } 
+else if(selection == 2) {
+     a.C1.style.display = "none";
+     a.C2.style.display = "";
+     a.C3.style.display = "none";
+     a.C4.style.display = "none";
+     a.C5.style.display = "none";
+     a.C6.style.display = "none";
+    } 
+else if(selection == 3) {
+     a.C1.style.display = "none";
+     a.C2.style.display = "none";
+     a.C3.style.display = "";
+     a.C4.style.display = "none";
+     a.C5.style.display = "none";
+     a.C6.style.display = "none";
+    } 
+else if(selection == 4) {
+     a.C1.style.display = "none";
+     a.C2.style.display = "none";
+     a.C3.style.display = "none";
+     a.C4.style.display = "";
+     a.C5.style.display = "none";
+     a.C6.style.display = "none";
+    } 
+}
+	</script>
+  </head>
+  
+  <body>
+    <section>
+    <fieldset>
+      <legend>Select Your Overwatch Hero!</legend>
+       <form name="selection">
+      <select name=" " onchange="showC(this.options[this.selectedIndex].value);"> 
+       <option value="1">오버워치 영웅 타입</option> 
+       <option value="2">돌격형</option>  
+       <option value="3">공격형</option>
+       <option value="4">지원형</option>
+      </select><br/><br/>
 
-<html><head><meta charset="utf-8"/><meta name="viewport"content="width=device-width,initial-scale=1"/>
+      <select name="C1" style="display: ;">
+        <option value=" ">오버워치 영웅 타입</option>
+      </select>
+      
+      <select name="C2" style="display: none;"> <!-- 돌격형 -->
+        
+       <option value="">돌격형 캐릭터</option> 
+       <option value=" ">D.VA</option>
+       <option value=" ">레킹볼 해먼드</option>
+       <option value=" ">라인하르트</option>
+       <option value=" ">윈스턴</option>
+       <option value=" ">자리야 알렉산드라</option>
+       <option value=" ">로드호그</option>
+       <option value=" ">오리사</option>
+      </select>
+      
+      <select name="C3" style="display: none;"> <!-- 공격형 -->
+       <option value=" ">공격형 캐릭터</option>
+       <option value=" ">겐지 시마다</option>
+       <option value=" ">리퍼</option>
+       <option value=" ">애쉬 엘리자베스</option>
+       <option value=" ">메이</option>
+       <option value=" ">트레이서</option>
+       <option value=" ">한조 시마다</option>
+       <option value=" ">맥크리</option>
+       <option value=" ">둠피스트</option>
+       <option value=" ">솔저:76</option>
+       <option value=" ">파라</option>
+       <option value=" ">바스티온</option>
+       <option value=" ">정크랫</option>
+       <option value=" ">솜브라</option>
+       <option value=" ">위도우메이커</option>
+       <option value=" ">토르비욘</option>
+      </select>
+      
+      <select name="C4" style="display: none;"> <!-- 지원형 -->
+       <option value=" ">지원형 캐릭터</option>
+       <option value=" ">바티스트</option>
+       <option value=" ">루시우</option>
+       <option value=" ">아나</option>
+       <option value=" ">모이라</option>
+       <option value=" ">메르시</option>
+       <option value=" ">젠야타</option>
+       <option value=" ">시메트라</option>
+       <option value=" ">브리기테</option>
+      </select>
 
-<title>폼 과제</title>
-
-<script>
-
-function type(obj) {
-var character_a = ["D.VA", "윈스턴", "라인하르트", "자리야", "로드호그", "오리사"];
-
-var character_b = ["겐지", "리퍼", "파라", "맥크리", "트레이서", "솔저", "한조", "둠피스트"];
-
-var character_c = ["메르시", "아나", "루시우", "모이라", "젠야타", "시메트라"];
-
-
-var target = document.getElementById("characterx");
- if(obj.value == "a") var k = character_a;
-else if(obj.value == "b") var k = character_b;
-else if(obj.value == "c") var k = character_c;
- 
-  target.options.length = 0;
-
-  for (x in k) {
-    var opt = document.createElement("option");
-    opt.value = k[x];
-    opt.innerHTML = k[x];
-    target.appendChild(opt);
-    }
-    }
-    </script>
-
-</head>
-<body>
-<section>
-<fieldset>
-<legend>Select Overwatch Hero</legend>
-<label for="typex">Type</label>
-<select id="typex" name="Charactertype" onchange ="type(this)">
-<option value="a"selected>돌격형</option>
-<option value="b">SF/공격형</option>
-<option value="c">지원형</option>
-<label for="character">Character</label>
-<select id="characterx" name="character"></select>
-</fieldset>
-</section>
-</body>
+<input type="reset" value="다시 고르기">
+</form></fieldset></section>
+  </body>
 </html>
