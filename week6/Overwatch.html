@@ -1,0 +1,48 @@
+<!doctype html> <!-- overwatch.html -->
+
+<html><head><meta charset="utf-8"/><meta name="viewport"content="width=device-width,initial-scale=1"/>
+
+<title>폼 과제</title>
+
+<script>
+
+function type(obj) {
+var character_a = ["D.VA", "윈스턴", "라인하르트", "자리야", "로드호그", "오리사"];
+
+var character_b = ["겐지", "리퍼", "파라", "맥크리", "트레이서", "솔저", "한조", "둠피스트"];
+
+var character_c = ["메르시", "아나", "루시우", "모이라", "젠야타", "시메트라"];
+
+
+var target = document.getElementById("characterx");
+ if(obj.value == "a") var k = character_a;
+else if(obj.value == "b") var k = character_b;
+else if(obj.value == "c") var k = character_c;
+ 
+  target.options.length = 0;
+
+  for (x in k) {
+    var opt = document.createElement("option");
+    opt.value = k[x];
+    opt.innerHTML = k[x];
+    target.appendChild(opt);
+    }
+    }
+    </script>
+
+</head>
+<body>
+<section>
+<fieldset>
+<legend>Select Overwatch Hero</legend>
+<label for="typex">Type</label>
+<select id="typex" name="Charactertype" onchange ="type(this)">
+<option value="a"selected>돌격형</option>
+<option value="b">SF/공격형</option>
+<option value="c">지원형</option>
+<label for="character">Character</label>
+<select id="characterx" name="character"></select>
+</fieldset>
+</section>
+</body>
+</html>
