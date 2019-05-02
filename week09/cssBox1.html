@@ -3,7 +3,7 @@
 <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
 <style>
 div.box1{display:block;width:300px;padding:10px;border:5px dotted gray; margin:0;}
-div.box2{box-sizing:border-box; display:block;width:300px;padding:10px;border:5px dotted gray; margin:0;}
+div.box2{box-sizing:border-box; display:block;width:300px;padding:10px;border:5px solid gray; margin:0;}
 div.container{box-sizing:border-box; width:600px;border:1px solid black;}
 .box3{box-sizing:border-box;width:50%;border:1px solid red; float:left;}
 </style>
@@ -11,27 +11,21 @@ div.container{box-sizing:border-box; width:600px;border:1px solid black;}
 <body><section><h3>박스</h3>
 <img src="../images/lobster.png" width="300" height="200" alt="랍스터">
 <div class="box1">
-HTML은 문서구조요소인 블록요소와 택스트 요소인 인라인 요소가 있다. 홈페이지 공간을 분할할 때, 블록 요소는 줄바꿈 태그없이
-스스로 줄바꿈을 실행하는 블록 형식의 문서구조 요소이고, 인라인 요소는 줄바꿈 요소가 없는 경우 가로로 계속하여 진행하는 것
-으로 텍스트 요소라 할 수 있다.</div>
+위랍스터 그림 콘텐트의 크기는 300*200인 반면 지금 읽고 있는 엘리먼트의 크기는 콘텐트 폭 300,패딩 20,보더 10을 더한 330입니다.
+</div>
 <div class="box2">
-div와 span요소는 각각 대표적인 블록요소와 인라인 요소이며, 홈 페이지의 공간을 일정부분 분할하여 공간을 배치하는 것으로 이러
-한 공간분할 엘리먼트는 엘리먼트집합을 표현하는 컨테이너라고 할 수 있다.</div>
+하지만,box-sizing의 border-box 속성값을 사용하면 콘텐트, 패딩, 보더 포함하여 그림과 같이 너비가 300이 됩니다.
+</div>
 <div>
-div 등 블록 요소는 <span style="color:blue;">하위 요소</span>로 타블록 요소이거나 인라인 요소의 포함이 가능하다.
-반면, span 등 인라인 요소는 <span style="color:red;">하위 요소로 블록 요소의 사용은 불가능</span>하다. 다만,a 인라인 요소의 
-하부요소로 hn, p등의 블록 요소는 가능하다.</div>
-<div class="container">
-
+300px그림 두 개를 붙여봅시다. 그림의 너미브 200이고 보더가 1px이므로 그림이 한 블럭안에 나타나지 않습니다. 하지만, box-sizing의 border-box사용하고 너비를 50%로 설정하면 복잡한 계산 없이 표현됩니다.
 </div>
 <div class="container">
-
-</div>
+<img src="../images/lobster.png">
+<img src="../images/lobster.png">
+<div style="clear:both;">
+</div></div>
 <div class="container">
-
-</div>
-</section>
-</body>
-</html>
-
-//여기까지
+<img class="box3"src="../images/lobster.png">
+<img class="box3"src="../images/lobster.png">
+<div style="clear:both;"></div></div>
+</section></body></html>
